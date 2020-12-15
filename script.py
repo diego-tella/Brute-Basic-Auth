@@ -1,3 +1,4 @@
+#Python 2.7.18
 import sys,requests,base64
 
 if len(sys.argv) != 3: 
