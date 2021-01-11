@@ -1,2 +1,2 @@
 # Brute-Basic-Auth
-Brute force em autenticações bácias http.
+Brute force in HTTP Basic access authentication.
